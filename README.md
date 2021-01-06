@@ -8,5 +8,5 @@ Jullie, junior applicatie ontwikkelaars, werken voor het bedrijf SchoolBiz, wat 
 Als eerste zul je voor het project in kaart moeten brengen wat het MVP (Minimal Viable Product) is. Dit resultaat zal in meerdere sprints bereikt moeten worden. De contactpersoon en productowner bij basisschool "de Splinter " is Jacob Petersen.
 
 ## TODO
+- [X] Toetsen
 - [ ] Meer rekensommen
-- [ ] Toetsen
