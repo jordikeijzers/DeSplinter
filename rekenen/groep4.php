@@ -21,6 +21,7 @@
                     <a href="../index.html">Home</a>
                     <a href="../informatie.html">Informatie</a>
                     <a href="../reken.html">Reken</a>
+                    <a href="../toetsen.html">Toetsen</a>
                     <a href="../contact.html">Contact</a>
                 </nav>
             </div>
@@ -29,7 +30,7 @@
             <section>
                 <h2>Rekensommen voor groep 4</h2>
                 <a href="../reken.html">Terug naar groep selectie</a>
-                <form action="groep4.php" method="POST" id="som-input">
+                <form action="#" method="POST" id="som-input">
                     <div id="tafels">
                         <h2>Tafels</h2>
                         <h3>Tafel van <?php echo $tafel_van; ?></h3>
