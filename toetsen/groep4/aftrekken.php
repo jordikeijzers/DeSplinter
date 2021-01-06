@@ -37,7 +37,12 @@
                         <h2>Aftrekken</h2>
                         <?php
                             function maak_tafel(int $min_getal) {
+                                echo "<section class=\"vragen\">";
                                 echo "<h3>Aftrekken met $min_getal</h3>";
+
+                                $totale_antwoorden = 0;
+                                $antwoorden_goed = 0;
+                                $antwoord_ingevuld = false;
 
                                 // Begin bij $min_getal + 1, zodat het niet
                                 // een negatief getal kan worden.
@@ -49,18 +54,55 @@
                                         $gegeven_antwoord = $_POST["som$min_getal$getal"];
                                         $correct_antwoord = intval($getal) - $min_getal;
                                         $is_antwoord_correct = intval($gegeven_antwoord) == $correct_antwoord;
+
+                                        $antwoord_ingevuld = true;
+
+                                        if ($is_antwoord_correct) {
+                                            $antwoorden_goed++;
+                                        }
                                     }
+
+                                    $totale_antwoorden++;
 
                                     echo "<div class=\"som\">";
                                     echo "<label>$getal - $min_getal =</label>";
                                     echo "<input type=\"text\" value=\"$gegeven_antwoord\" " . ($is_antwoord_correct ? "" : " class=\"incorrect\"") . "placeholder=\"Typ jouw antwoord hier...\" name=\"som$min_getal$getal\">";
                                     echo "</div>";
                                 }
+
+                                if ($antwoord_ingevuld) {
+                                    $cijfer = $antwoorden_goed / $totale_antwoorden * 9 + 1;
+
+                                    echo "<p><strong>Je hebt $antwoorden_goed van de $totale_antwoorden antwoorden goed. Jouw cijfer voor dit onderdeel is dus een $cijfer.</strong></p>";
+                                    echo "</section>";
+
+                                    return $cijfer;
+                                }
+
+                                echo "</section>";
                             }
 
-                            maak_tafel($getal_1);
-                            maak_tafel($getal_2);
-                            maak_tafel($getal_3);
+                            $cijfers = array();
+
+                            $cijfers[] = maak_tafel($getal_1);
+                            $cijfers[] = maak_tafel($getal_2);
+                            $cijfers[] = maak_tafel($getal_3);
+
+                            $cijfer = 0;
+                            $aantal_cijfers = 0;
+
+                            foreach ($cijfers as $_ => $onderdeel_cijfer) {
+                                $cijfer += $onderdeel_cijfer;
+                                $aantal_cijfers++;
+                            }
+
+                            if ($aantal_cijfers > 0) {
+                                $cijfer = $cijfer / $aantal_cijfers;
+
+                                $color = $cijfer >= 5.5 ? "#00aa00" : "#aa0000";
+
+                                echo "<p style=\"color: $color\"><strong>Jouw punt voor deze toets is een $cijfer</strong></p>";
+                            }
                         ?>
                     </div>
                     <input type="submit" value="Controleren">

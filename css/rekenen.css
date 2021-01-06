@@ -46,3 +46,8 @@ input[type="submit"] {
     border: 1px #ff0000 solid !important;
     background-color: #f0d6d6 !important;
 }
+
+.vragen {
+    padding-bottom: 10px;
+    border-bottom: 2px lightgrey solid;
+}
