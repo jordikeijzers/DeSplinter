@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <?php
-    $tafels_1 = 4;
-    $tafels_2 = 2;
-    $tafels_3 = 5;
+    $getal_1 = 4;
+    $getal_2 = 2;
+    $getal_3 = 5;
 ?>
 
 <html>
@@ -55,6 +55,7 @@
                                     }
 
                                     $antwoord_ingevuld = true;
+                                    $totale_antwoorden++;
 
                                     if ($is_antwoord_correct) {
                                         $antwoorden_goed++;
