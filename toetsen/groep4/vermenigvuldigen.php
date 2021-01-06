@@ -30,7 +30,7 @@
         </header>
         <div id="site-content">
             <section>
-                <h2>Rekensommen voor groep 5</h2>
+                <h2>Rekensommen voor groep 4</h2>
                 <a href=".">Terug naar som selectie</a>
                 <form action="#" method="POST" id="som-input">
                     <div id="tafels">
