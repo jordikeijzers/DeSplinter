@@ -33,7 +33,7 @@
                 <h2>Rekensommen voor groep 5</h2>
                 <a href=".">Terug naar som selectie</a>
                 <form action="#" method="POST" id="som-input">
-                    <div id="tafels">
+                    <div id="aftrekken">
                         <h2>Aftrekken</h2>
                         <?php
                             function maak_tafel(int $min_getal) {
@@ -45,15 +45,15 @@
                                     $gegeven_antwoord = "";
                                     $is_antwoord_correct = true;
 
-                                    if (isset($_POST["tafels_som$min_getal$getal"])) {
-                                        $gegeven_antwoord = $_POST["tafels_som$min_getal$getal"];
+                                    if (isset($_POST["som$min_getal$getal"])) {
+                                        $gegeven_antwoord = $_POST["som$min_getal$getal"];
                                         $correct_antwoord = intval($getal) - $min_getal;
                                         $is_antwoord_correct = intval($gegeven_antwoord) == $correct_antwoord;
                                     }
 
                                     echo "<div class=\"som\">";
                                     echo "<label>$getal - $min_getal =</label>";
-                                    echo "<input type=\"text\" value=\"$gegeven_antwoord\" " . ($is_antwoord_correct ? "" : " class=\"incorrect\"") . "placeholder=\"Typ jouw antwoord hier...\" name=\"tafels_som$min_getal$getal\">";
+                                    echo "<input type=\"text\" value=\"$gegeven_antwoord\" " . ($is_antwoord_correct ? "" : " class=\"incorrect\"") . "placeholder=\"Typ jouw antwoord hier...\" name=\"som$min_getal$getal\">";
                                     echo "</div>";
                                 }
                             }

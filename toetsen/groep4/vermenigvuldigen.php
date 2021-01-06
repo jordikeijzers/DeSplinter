@@ -43,15 +43,15 @@
                                     $gegeven_antwoord = "";
                                     $is_antwoord_correct = true;
 
-                                    if (isset($_POST["tafels_som$tafel$getal"])) {
-                                        $gegeven_antwoord = $_POST["tafels_som$tafel$getal"];
+                                    if (isset($_POST["som$tafel$getal"])) {
+                                        $gegeven_antwoord = $_POST["som$tafel$getal"];
                                         $correct_antwoord = intval($getal) * $tafel;
                                         $is_antwoord_correct = intval($gegeven_antwoord) == $correct_antwoord;
                                     }
 
                                     echo "<div class=\"som\">";
                                     echo "<label>$getal x $tafel =</label>";
-                                    echo "<input type=\"text\" value=\"$gegeven_antwoord\" " . ($is_antwoord_correct ? "" : " class=\"incorrect\"") . "placeholder=\"Typ jouw antwoord hier...\" name=\"tafels_som$tafel$getal\">";
+                                    echo "<input type=\"text\" value=\"$gegeven_antwoord\" " . ($is_antwoord_correct ? "" : " class=\"incorrect\"") . "placeholder=\"Typ jouw antwoord hier...\" name=\"som$tafel$getal\">";
                                     echo "</div>";
                                 }
                             }
