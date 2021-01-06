@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    $tafel_van = 3;
+    $tafel_van = 2;
 ?>
 
 <html>
