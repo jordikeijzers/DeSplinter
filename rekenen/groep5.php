@@ -22,6 +22,7 @@
                     <a href="../informatie.html">Informatie</a>
                     <a href="../reken.html">Reken</a>
                     <a href="../contact.html">Contact</a>
+                    <a href="../toetsen.html">Reken</a>
                 </nav>
             </div>
         </header>
