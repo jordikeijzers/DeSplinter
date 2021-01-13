@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/rekenen.css">
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
         <title>De Splinter - Toetsen - Groep 4 - Vermenigvuldigen</title>
     </head>
     <body>
@@ -108,7 +110,7 @@
             </section>
         </div>
         <footer>
-            <p>&copy; Basisschool De Splinter, 2020</p>
+            <p>&copy; Basisschool De Splinter, 2020-2021</p>
         </footer>
     </body>
 </html>

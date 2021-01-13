@@ -68,3 +68,7 @@ input[type="submit"] {
     padding: 5px;
     display: block;
 }
+
+::selection {
+    background-color: #09ff002d;
+}
