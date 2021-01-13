@@ -1,0 +1,12 @@
+form {
+    width: 500px;
+    margin-bottom: 40px;
+}
+
+.form-input {
+    width: 80%;
+}
+
+#email-div {
+    width: 500px;
+}
