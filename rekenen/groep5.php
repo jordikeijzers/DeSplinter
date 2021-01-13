@@ -57,7 +57,7 @@
             </section>
         </div>
         <footer>
-            <p>&copy; Basisschool De Splinter, 2020</p>
+            <p>&copy; Basisschool De Splinter, 2020-2021</p>
         </footer>
     </body>
 </html>
