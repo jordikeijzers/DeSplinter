@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/rekenen.css">
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
         <title>De Splinter - Rekenen - Groep 4</title>
     </head>
     <body>

@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/contact.css">
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
         <title>De Splinter</title>
     </head>
     <body>
