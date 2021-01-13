@@ -52,14 +52,15 @@
                                         $gegeven_antwoord = $_POST["som$tafel$getal"];
                                         $correct_antwoord = intval($getal) * $tafel;
                                         $is_antwoord_correct = intval($gegeven_antwoord) == $correct_antwoord;
+
+                                        $antwoord_ingevuld = true;
+
+                                        if ($is_antwoord_correct) {
+                                            $antwoorden_goed++;
+                                        }
                                     }
 
-                                    $antwoord_ingevuld = true;
                                     $totale_antwoorden++;
-
-                                    if ($is_antwoord_correct) {
-                                        $antwoorden_goed++;
-                                    }
 
                                     echo "<div class=\"som\">";
                                     echo "<label>$getal x $tafel =</label>";
