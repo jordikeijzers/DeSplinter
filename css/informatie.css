@@ -7,3 +7,13 @@
     padding: 10px;
     width: 50%;
 }
+
+@media screen and (max-width: 1070px) {
+    .floating-container {
+        display: block;
+    }
+
+    .floating {
+        width: 95%;
+    }
+}
