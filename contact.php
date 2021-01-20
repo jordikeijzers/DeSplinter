@@ -55,6 +55,10 @@
                         <input type="submit" id="email-verzonden" value="Versturen">
                     </form>
                     <?php
+                        // Ik ontvang liever geen mails van mensen
+                        // die ik niet ken. Omdat dit openbaar op
+                        // GitHub staat, werkt het versturen van mails niet.
+                        // Dit kan werkend gemaakt worden met de mail() functie.
                         if ($email_verzonden) {
                             echo "<p><strong>E-mails versturen wordt (nog) niet ondersteund. De mail is niet verstuurd.</strong></p>";
                         }
