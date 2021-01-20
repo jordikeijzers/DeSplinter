@@ -18,18 +18,7 @@
         <title>De Splinter - Toetsen - Groep 5 - Aftrekken</title>
     </head>
     <body>
-        <header>
-            <div id="header-content">
-                <h1>De Splinter</h1>
-                <nav>
-                    <a href="../../index.html">Home</a>
-                    <a href="../../informatie.html">Informatie</a>
-                    <a href="../../reken.html">Reken</a>
-                    <a href="../../toetsen.html">Toetsen</a>
-                    <a href="../../contact.php">Contact</a>
-                </nav>
-            </div>
-        </header>
+        <?php include_once("../../components/header.html"); ?>
         <div id="site-content">
             <section>
                 <h2>Rekensommen voor groep 5</h2>
