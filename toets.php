@@ -2,6 +2,7 @@
     session_start();
 
     $totaal_aantal_sommen = 0;
+    $antwoorden_goed = 0;
 
     /**
      * Dit geeft een array terug.
@@ -67,6 +68,7 @@
      */
     function maak_sommen(int $methode, int $groep) {
         global $totaal_aantal_sommen;
+        global $antwoorden_goed;
 
         // Maak titel
         echo "<section class=\"vragen\">\n<h3>";
@@ -143,7 +145,7 @@
 
             $som .= " $getal2 =";
 
-            $correct = false;
+            $correct = true;
 
             if (isset($_POST[$som_id])) {
                 $ingevoerde_antwoord = $_POST[$som_id];
@@ -151,8 +153,10 @@
                 $som_data = $_SESSION[$som_id];
                 $goede_antwoord = $som_data[2];
 
-                if ($ingevoerde_antwoord == $goede_antwoord) {
-                    $correct = true;
+                if ($ingevoerde_antwoord != $goede_antwoord) {
+                    $correct = false;
+                } else {
+                    $antwoorden_goed++;
                 }
             } else {
                 $ingevoerde_antwoord = "";
@@ -167,11 +171,15 @@
     if (isset($_GET["groep"])) {
         $groep = filter_input(INPUT_GET, "groep", FILTER_SANITIZE_NUMBER_INT);
 
-        if (!$groep) {
-            $groep = 4;
+        // De gebruiker heeft geen geldige groep gekozen.
+        // Breng de gebruiker terug naar de keuze pagina.
+        if (!$groep || $groep > 6 || $groep < 4) {
+            header("Location: toetsen.html");
         }
     } else {
-        $groep = 4;
+        // Er is geen groep gekozen, breng
+        // de gebruiker terug naar de keuze pagina.
+        header("Location: toetsen.html");
     }
 ?>
 
@@ -204,13 +212,24 @@
         <div id="site-content">
             <section>
                 <h2>Rekensommen voor groep <?php echo $groep; ?></h2>
-                <form action="#" method="POST">
+                <form action="#" method="POST" id="som-input">
                     <?php
                         $totaal_aantal_sommen = 0;
 
                         maak_sommen(1, $groep);
                         maak_sommen(2, $groep);
                         maak_sommen(3, $groep);
+
+                        if (isset($_POST["Verstuurd"])) {
+                            $punt = max(number_format($antwoorden_goed / $totaal_aantal_sommen * 10, 1, ",", "."), 1);
+                            $kleur = "#ff0000";
+
+                            if ($punt > 5.5) {
+                                $kleur = "#00ff00";
+                            }
+
+                            echo "<p style=\"color:$kleur\">Jouw punt voor deze toets is een $punt</p>";
+                        }
                     ?>
                     <input type="submit" value="Controleren" name="Verstuurd">
                 </form>
